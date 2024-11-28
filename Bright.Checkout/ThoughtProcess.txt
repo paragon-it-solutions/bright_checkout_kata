@@ -30,7 +30,7 @@ Checkout {
           int TotalPrice = (multiBuyQuantityInBasket * DealPrice) + (quantity - (multiBuyQuantityInBasket * MultiBuyQuantity) * StandardUnitPrice)
     }
 
-Possibly use a PriceCalculator class product used by checkout to separate concerns.
+Possibly use a PriceCalculator class product used by checkout to separate concerns? 
     
 "Our checkout scans items individually and accepts items in any order, so that if we scan a B, an A, and another B, we’ll recognize the two Bs qualify for a special offer for a total price of 95.
 You can qualify for a special offer multiple times e.g. if you scan 6 As then you will have a total price of 260. 
