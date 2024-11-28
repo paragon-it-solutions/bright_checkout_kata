@@ -1,8 +1,48 @@
 ## Planning ##
 
+Given the below:
 "In a normal supermarket, products are identified using Stock Keeping Units, or SKUs. 
 In our supermarket, we’ll use individual letters of the alphabet (A, B, C, and so on). 
 Our goods are priced individually. In addition, some items are multipriced: buy n of them, and they’ll cost you y.
- For example, item ‘A’ might cost 50 pounds individually, but this week we have a special offer; buy three ‘A’s and they’ll cost you 130."
+For example, item ‘A’ might cost 50 pounds individually, but this week we have a special offer; buy three ‘A’s and they’ll cost you 130."
+
+I will need to create a way to track multiple product objects (with string SKU as key) along with quantity selected and store these in variable.
+User will be able to add item, remove item, and checkout.
+Admin 
+I will need at least 2 classes to manage this: 
+
+Product {
+    required string SKU, 
+    required int StandardUnitPrice,
+    int? MultiBuyQuantity,
+    int? MultiBuyPrice
+}
+
+Checkout {
+    dictionary[string SKU, Product product] Basket
+    ScanItem(string SKU)
+        - Verify SKU exists
+          - Add +1 quantity to basket
+    int GetTotalPrice
+        - Check all items/quantity/multibuyprice in basket and calculate appropriately
+        - Think calculation for deals something like:
+          int multiBuyQuantityInBasket = (math.floor(Quantity / MultiBuyQuantity) // round down to get nearest whole number e.g. 8/3 = 2.6 rounded to 2 as 2 MultiBuyPrice will be valid
+          int TotalPrice = (multiBuyQuantityInBasket * DealPrice) + (quantity - (multiBuyQuantityInBasket * MultiBuyQuantity) * StandardUnitPrice)
+    }
+
+Possibly use a PriceCalculator class product used by checkout to separate concerns.
+    
+"Our checkout scans items individually and accepts items in any order, so that if we scan a B, an A, and another B, we’ll recognize the two Bs qualify for a special offer for a total price of 95.
+You can qualify for a special offer multiple times e.g. if you scan 6 As then you will have a total price of 260. 
+Because the pricing changes frequently, we need to be able to pass in a set of pricing rules each time we start handling a checkout transaction."
+
+I think order is not important so don't need to implement List or other ordered collection - just update quantity of item. Dictionary may be suitable - investigate most efficient ICollection that will meet needs.
+
+"pricing changes frequently, we need to be able to pass in a set of pricing rules each time we start handling a checkout transaction."
+Checkout needs to be able to receive object of AvailableProducts that contains list of product, or alternatively an object that contains list of { SKU, MultiBuyQuantity, MultiBuyPrice } to update static list of products
+I think would be best to allow pass in of AvailableProducts as this could then be reused anywhere.
+
+    
+
  
  
