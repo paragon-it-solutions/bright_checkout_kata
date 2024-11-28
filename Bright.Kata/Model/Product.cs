@@ -13,7 +13,7 @@ public class Product
     /// <summary>
     /// The standard unit price of the product.
     /// </summary>
-    public int StandardUnitPrice { get; set; }
+    public required int StandardUnitPrice { get; set; }
     
     /// <summary>
     /// Represents a pricing rule for the product, if applicable.
