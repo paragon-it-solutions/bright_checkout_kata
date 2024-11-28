@@ -1,6 +1,8 @@
-﻿namespace Bright.Checkout.Contracts.Data;
+﻿using Bright.Checkout.Model;
 
-public class IProductRepository
+namespace Bright.Checkout.Contracts.Data;
+
+public interface IProductRepository
 {
-    
+    public Dictionary<string, Product> GetProducts();
 }
