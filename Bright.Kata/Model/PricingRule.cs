@@ -8,10 +8,10 @@ public class PricingRule
     /// <summary>
     /// The quantity required for each multi-buy offer, if applicable.
     /// </summary>
-    private int? MultiBuyQuantity { get; set; }
+    public int? MultiBuyQuantity { get; set; }
 
     /// <summary>
     /// The discounted price for a multi-buy offer, if applicable.
     /// </summary>
-    private int? MultiBuyPrice { get; set; }
+    public int? MultiBuyPrice { get; set; }
 }
