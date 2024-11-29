@@ -50,8 +50,9 @@ B	30	2 for 45
 C	20	
 D	15	
 
-After implementing product and settling on data structure and usage, I will most likely need the below method:
+After implementing product and settling on data structure and usage, I will most likely need something similar to below method:
     - SetPricingRules(string ProductCode, int MultiBuyQuantity, int MultiBuyPrice)
+I will implement this method as an extension method to keep the Product class solely focused on data
 
 This method can be used in the Program.cs before initialising checkout
 
