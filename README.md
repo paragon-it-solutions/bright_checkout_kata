@@ -9,8 +9,7 @@ Troughout development, notes on thought process and design decisions were includ
 - Product management with individual and multi-buy pricing
 - Flexible pricing rules that can be updated for each checkout transaction
 - Scanning of items in any order
-- Support for multiple special offers on the same product
-- Separation of concerns with distinct services for checkout and product management
+- Dependency injection used extensively throughout (mostly through primary constructor injection)
 
 ## Getting Started
 
