@@ -1,6 +1,6 @@
-﻿using Bright.Checkout.Model;
+﻿using Bright.Kata.Model;
 
-namespace Bright.Checkout.Contracts.Data;
+namespace Bright.Kata.Contracts.Data;
 
 public interface IProductRepository
 {

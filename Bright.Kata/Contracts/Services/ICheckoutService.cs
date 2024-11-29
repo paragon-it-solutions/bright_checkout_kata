@@ -1,4 +1,4 @@
-﻿namespace Bright.Checkout.Contracts.Services;
+﻿namespace Bright.Kata.Contracts.Services;
 
 public interface ICheckoutService
 {

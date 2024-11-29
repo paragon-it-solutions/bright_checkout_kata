@@ -1,4 +1,4 @@
-﻿namespace Bright.Checkout.Model;
+﻿namespace Bright.Kata.Model;
 
 /// <summary>
 /// Represents a product in the checkout system.

@@ -1,7 +1,7 @@
-﻿using Bright.Checkout.Contracts.Data;
-using Bright.Checkout.Contracts.Services;
+﻿using Bright.Kata.Contracts.Data;
+using Bright.Kata.Contracts.Services;
 
-namespace Bright.Checkout.Services;
+namespace Bright.Kata.Services;
 
 /// <summary>
 /// Represents a service for managing checkout operations.
