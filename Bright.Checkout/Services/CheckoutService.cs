@@ -65,7 +65,7 @@ public class CheckoutService(IProductService productService) : ICheckoutService
     ///     Calculates the total price of all items in the current checkout session.
     /// </summary>
     /// <returns>The total price of all items in the basket.</returns>
-    public int GetTotalPrice()
+    public int CalculateTotalPrice()
     {
         int totalPrice = 0;
 

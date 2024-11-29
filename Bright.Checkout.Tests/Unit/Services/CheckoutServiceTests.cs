@@ -40,7 +40,7 @@ public class CheckoutServiceTests
 
         // Assert
         Assert.True(result);
-        int total = checkoutService.GetTotalPrice();
+        int total = checkoutService.CalculateTotalPrice();
         Assert.Equal(50, total);
     }
 
@@ -92,7 +92,7 @@ public class CheckoutServiceTests
         checkoutService.Scan("C");
         checkoutService.Scan("A");
 
-        int totalPrice = checkoutService.GetTotalPrice();
+        int totalPrice = checkoutService.CalculateTotalPrice();
 
         // Assert
         Assert.Equal(150, totalPrice);
@@ -109,7 +109,7 @@ public class CheckoutServiceTests
         var checkoutService = new CheckoutService(mockProductService.Object);
 
         // Act
-        int totalPrice = checkoutService.GetTotalPrice();
+        int totalPrice = checkoutService.CalculateTotalPrice();
 
         // Assert
         Assert.Equal(0, totalPrice);
