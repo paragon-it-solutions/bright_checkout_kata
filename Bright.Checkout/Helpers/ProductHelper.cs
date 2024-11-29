@@ -27,7 +27,7 @@ public static class ProductHelper
 
         string[] parts = productString.Split(' ');
 
-        if (parts.Length >= 2)
+        if (parts.Length is >= 2 and <= 4)
         {
             string productCode = parts[0];
             try
@@ -71,7 +71,7 @@ public static class ProductHelper
                 Console.WriteLine("Example: A 50 2 130");
             }
         }
+        
         return product;
     }
-
 }
