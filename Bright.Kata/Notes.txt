@@ -60,6 +60,8 @@ Once checkout initialised, will need to keep track of a Basket
 Products in basket will need to be tracked in Basket - most likely do similar to Product dictionary
 Make class for BasketItem that has a Quantity and Product
 Use dictionary to store basketItem keyed by productCode e,g, Dictionary<string, BasketITem>
+Alternatively I could use a Dictionary<ProductCode, Quantity> and look up the price values from the products dictionary
+this dictionary would be more performant but be less extensible, and would be useful to be able to display other Product properties in basket
 
  
  

@@ -1,5 +1,6 @@
 ﻿using Bright.Kata.Contracts.Data;
 using Bright.Kata.Contracts.Services;
+using Bright.Kata.Model;
 
 namespace Bright.Kata.Services;
 
@@ -9,6 +10,7 @@ namespace Bright.Kata.Services;
 /// <param name="productRepository">The repository for accessing product information.</param>
 public class CheckoutService(IProductRepository productRepository) : ICheckoutService
 {
+    public Dictionary<string, BasketItem> Basket = new Dictionary<string, BasketItem>();
     /// <summary>
     /// Scans an item and adds it to the current checkout session.
     /// </summary>
