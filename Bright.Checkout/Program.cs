@@ -1,14 +1,9 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using Bright.Checkout.Contracts.Data;
 using Bright.Checkout.Contracts.Services;
-using Bright.Checkout.Model;
-using Bright.Checkout.Helpers;
 using Bright.Checkout.Services;
 
 var services = new ServiceCollection();
-
-// Create the dictionary of products
-Dictionary<string, Product> products = DefaultProductHelper.GetDefaultProducts();
 
 // Register IProductRepository
 services.AddSingleton<IProductRepository>();
