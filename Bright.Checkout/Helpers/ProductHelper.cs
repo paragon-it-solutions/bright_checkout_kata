@@ -66,7 +66,7 @@ public static class ProductHelper
             catch
             {
                 Console.WriteLine(
-                    "Failed to add product. Please make sure you values are provided ProductCode StandardUnitPrice [DiscountQuantity DiscountPrice."
+                    "Failed to add product. Please make sure you values are provided ProductCode StandardUnitPrice [DiscountQuantity DiscountPrice]."
                 );
                 Console.WriteLine("Example: A 50 2 130");
             }
