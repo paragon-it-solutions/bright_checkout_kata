@@ -37,9 +37,9 @@ public class ProductRepository : IProductRepository
             _currentProducts = products;
             return true;
         }
-        catch (Exception ex)
+        catch
         {
-            Console.WriteLine("Error updating products: {ex.Message}");
+            Console.WriteLine("Error setting products!");
             return false;
         }
     }
@@ -64,13 +64,13 @@ public class ProductRepository : IProductRepository
                 return true;
             }
         }
-        catch (KeyNotFoundException ex)
+        catch (KeyNotFoundException)
         {
             Console.WriteLine($"Product SKU '{productCode}' not found!");
         }
-        catch (Exception ex)
+        catch
         {
-            Console.WriteLine($"Error updating pricing rule for {productCode}: {ex.Message}");
+            Console.WriteLine($"Error updating pricing rule for {productCode}!");
         }
 
         return false;
