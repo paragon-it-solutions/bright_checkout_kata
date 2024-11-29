@@ -1,3 +1,4 @@
+using Bright.Checkout.Contracts.Core;
 using Bright.Checkout.Contracts.Services;
 using Bright.Checkout.Extensions;
 using Bright.Checkout.Helpers;
@@ -8,7 +9,7 @@ namespace Bright.Checkout.Core;
 /// <summary>
 ///     Handles the creation of custom products.
 /// </summary>
-public class CustomProductHandler(IProductService productService)
+public class CustomProductHandler(IProductService productService) : ICustomProductHandler
 {
     /// <summary>
     ///     Handles the process of adding custom products to the product service.

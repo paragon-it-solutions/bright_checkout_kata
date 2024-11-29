@@ -1,3 +1,4 @@
+using Bright.Checkout.Contracts.Core;
 using Bright.Checkout.Contracts.Services;
 using Bright.Checkout.Extensions;
 using Bright.Checkout.Helpers;
@@ -8,7 +9,7 @@ namespace Bright.Checkout.Core;
 /// <summary>
 ///     Handles the management and customization of pricing rules for products.
 /// </summary>
-public class PricingRuleHandler(IProductService productService)
+public class PricingRuleHandler(IProductService productService) : IPricingRuleHandler
 {
     /// <summary>
     ///     Handles the process of customizing pricing rules for products.
