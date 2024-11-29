@@ -6,9 +6,9 @@ Troughout development, notes on thought process and design decisions were includ
 
 ## Features
 
-- Product management with individual and multi-buy pricing
-- Flexible pricing rules that can be updated for each checkout transaction
-- Scanning of items in any order
+- Product management of SKU items(Add or Update)
+- Support for multibuy offers on products with flexible pricing rules that can be updated for each checkout transaction
+- Scanning of items in any order for basket
 - Dependency injection used extensively throughout (mostly through primary constructor injection)
 
 ## Getting Started
