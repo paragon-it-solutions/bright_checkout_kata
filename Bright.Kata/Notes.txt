@@ -1,5 +1,6 @@
 ## Planning ##
 
+
 Given the below:
 "In a normal supermarket, products are identified using Stock Keeping Units, or SKUs. 
 In our supermarket, we’ll use individual letters of the alphabet (A, B, C, and so on). 
@@ -42,6 +43,12 @@ I think order is not important so don't need to implement List or other ordered 
 Checkout needs to be able to receive object of AvailableProducts that contains list of product, or alternatively an object that contains list of { SKU, MultiBuyQuantity, MultiBuyPrice } to update static list of products
 I think would be best to allow pass in of AvailableProducts as this could then be reused anywhere.
 
+Default Products: 
+SKU	Unit Price	Special Price
+A	50	3 for 130
+B	30	2 for 45
+C	20	
+D	15	
     
 
  
