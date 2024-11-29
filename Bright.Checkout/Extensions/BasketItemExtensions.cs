@@ -26,7 +26,7 @@ public static class BasketItemExtensions
             int multiBuyTotal = multiBuyQuantityInBasket * item.Product.PricingRule.MultiBuyPrice;
 
             // Calculate price for remaining items
-            int standardQuantityInBasket = item.Quantity - multiBuyQuantityInBasket;
+            int standardQuantityInBasket = item.Quantity - multiBuyQuantityInBasket * item.Product.PricingRule.MultiBuyQuantity;
             int standardTotal = standardQuantityInBasket * item.Product.PricingRule.MultiBuyPrice;
 
             return multiBuyTotal + standardTotal;
