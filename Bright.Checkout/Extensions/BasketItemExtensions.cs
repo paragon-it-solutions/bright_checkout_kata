@@ -18,7 +18,7 @@ public static class BasketItemExtensions
     /// </returns>
     public static int GetTotalPrice(this BasketItem item)
     {
-        if (item.Product.PricingRule != null)
+        if (item.Product.PricingRule != null && item.Quantity >= item.Product.PricingRule.MultiBuyQuantity)
         {
             // Calculate price for multi-buy offers
             // Integer division will round down to the nearest whole number - this will give the number of valid multi-buy offers
