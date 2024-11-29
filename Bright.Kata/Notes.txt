@@ -49,7 +49,16 @@ A	50	3 for 130
 B	30	2 for 45
 C	20	
 D	15	
-    
+
+After implementing product and settling on data structure and usage, I will most likely need the below method:
+    - SetPricingRules(string ProductCode, int MultiBuyQuantity, int MultiBuyPrice)
+
+This method can be used in the Program.cs before initialising checkout
+
+Once checkout initialised, will need to keep track of a Basket
+Products in basket will need to be tracked in Basket - most likely do similar to Product dictionary
+Make class for BasketItem that has a Quantity and Product
+Use dictionary to store basketItem keyed by productCode e,g, Dictionary<string, BasketITem>
 
  
  
