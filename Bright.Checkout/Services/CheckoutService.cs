@@ -8,11 +8,11 @@ namespace Bright.Checkout.Services;
 /// <summary>
 ///     Represents a service for managing checkout operations.
 /// </summary>
-/// <param name="productRepository">The repository for accessing product information.</param>
-public class CheckoutService(IProductRepository productRepository) : ICheckoutService
+/// <param name="productService">The service for accessing product information.</param>
+public class CheckoutService(IProductService productService) : ICheckoutService
 {
     // Initialize dictionary for storing product information.
-    private readonly Dictionary<string, Product> _products = productRepository.GetProducts();
+    private readonly Dictionary<string, Product> _products = productService.GetProducts();
 
     // Initialize dictionary for storing scanned items and their quantities.
     private readonly Dictionary<string, BasketItem> _basket = new();

@@ -1,4 +1,4 @@
-using Bright.Checkout.Contracts.Data;
+using Bright.Checkout.Contracts.Services;
 using Bright.Checkout.Model;
 using Bright.Checkout.Services;
 using Moq;
@@ -11,18 +11,18 @@ public class CheckoutServiceTests
 
     public CheckoutServiceTests()
     {
-        Mock<IProductRepository> mockProductRepository = new();
-        mockProductRepository
+        Mock<IProductService> mockProductService = new();
+        mockProductService
             .Setup(repo => repo.GetProducts())
             .Returns(new Dictionary<string, Product>());
-        _checkoutService = new CheckoutService(mockProductRepository.Object);
+        _checkoutService = new CheckoutService(mockProductService.Object);
     }
 
     [Fact]
     public void Scan_ValidProduct_AddsToBasketSuccessfully()
     {
         // Arrange
-        var mockProductRepository = new Mock<IProductRepository>();
+        var mockProductService = new Mock<IProductService>();
         var testProducts = new Dictionary<string, Product>
         {
             {
@@ -31,9 +31,9 @@ public class CheckoutServiceTests
             }
         };
 
-        mockProductRepository.Setup(repo => repo.GetProducts())
+        mockProductService.Setup(repo => repo.GetProducts())
             .Returns(testProducts);
-        var checkoutService = new CheckoutService(mockProductRepository.Object);
+        var checkoutService = new CheckoutService(mockProductService.Object);
 
         // Act
         bool result = checkoutService.Scan("A");
@@ -48,11 +48,11 @@ public class CheckoutServiceTests
     public void Scan_NonExistentProduct_ReturnsFalse()
     {
         // Arrange
-        var mockProductRepository = new Mock<IProductRepository>();
-        mockProductRepository
+        var mockProductService = new Mock<IProductService>();
+        mockProductService
             .Setup(repo => repo.GetProducts())
             .Returns(new Dictionary<string, Product>());
-        var checkoutService = new CheckoutService(mockProductRepository.Object);
+        var checkoutService = new CheckoutService(mockProductService.Object);
 
         // Act
         bool result = checkoutService.Scan("NonExistentProduct");
@@ -65,7 +65,7 @@ public class CheckoutServiceTests
     public void GetTotalPrice_MultipleItemsInBasket_CalculatesCorrectTotal()
     {
         // Arrange
-        var mockProductRepository = new Mock<IProductRepository>();
+        var mockProductRepository = new Mock<IProductService>();
         var testProducts = new Dictionary<string, Product>
         {
             {
@@ -102,11 +102,11 @@ public class CheckoutServiceTests
     public void GetTotalPrice_EmptyBasket_ReturnsZero()
     {
         // Arrange
-        var mockProductRepository = new Mock<IProductRepository>();
-        mockProductRepository
+        var mockProductService = new Mock<IProductService>();
+        mockProductService
             .Setup(repo => repo.GetProducts())
             .Returns(new Dictionary<string, Product>());
-        var checkoutService = new CheckoutService(mockProductRepository.Object);
+        var checkoutService = new CheckoutService(mockProductService.Object);
 
         // Act
         int totalPrice = checkoutService.GetTotalPrice();
