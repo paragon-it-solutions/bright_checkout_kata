@@ -1,6 +1,6 @@
-﻿using Bright.Kata.Model;
+﻿using Bright.Checkout.Model;
 
-namespace Bright.Kata.Helpers;
+namespace Bright.Checkout.Helpers;
 
 /// <summary>
 /// Provides helper methods for default product data.

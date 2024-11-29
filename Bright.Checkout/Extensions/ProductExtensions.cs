@@ -1,4 +1,4 @@
-﻿using Bright.Kata.Model;
+﻿using Bright.Checkout.Model;
 
 namespace Bright.Checkout.Extensions;
 

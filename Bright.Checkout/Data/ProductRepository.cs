@@ -1,8 +1,8 @@
-﻿using Bright.Kata.Contracts.Data;
-using Bright.Kata.Helpers;
-using Bright.Kata.Model;
+﻿using Bright.Checkout.Contracts.Data;
+using Bright.Checkout.Helpers;
+using Bright.Checkout.Model;
 
-namespace Bright.Kata.Data;
+namespace Bright.Checkout.Data;
 
 /// <summary>
 /// Represents a repository for managing product data.
