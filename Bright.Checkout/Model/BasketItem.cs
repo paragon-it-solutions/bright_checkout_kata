@@ -3,7 +3,7 @@
 /// <summary>
 ///     Represents products in the basket.
 /// </summary>
-public class BasketItem(Product product)
+public class BasketItem(Product product, int quantity = 0)
 {
     /// <summary>
     ///     The product in the basket.
@@ -13,5 +13,5 @@ public class BasketItem(Product product)
     /// <summary>
     ///     The quantity of the product. Defaults to 0.
     /// </summary>
-    public int Quantity { get; set; } = 0;
+    public int Quantity { get; set; } = quantity;
 }
