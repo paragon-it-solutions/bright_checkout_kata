@@ -54,9 +54,9 @@ public class ProductRepositoryTests
                 {
                     ProductCode = "TEST2",
                     StandardUnitPrice = 20,
-                    PricingRule = new PricingRule { MultiBuyQuantity = 5, MultiBuyPrice = 45 },
+                    PricingRule = new PricingRule { MultiBuyQuantity = 5, MultiBuyPrice = 45 }
                 }
-            },
+            }
         };
 
         // Act

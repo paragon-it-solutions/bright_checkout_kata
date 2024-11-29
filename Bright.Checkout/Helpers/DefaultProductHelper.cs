@@ -25,7 +25,7 @@ public static class DefaultProductHelper
                     {
                         ProductCode = defaultProductCodes[0],
                         StandardUnitPrice = 50,
-                        PricingRule = new PricingRule { MultiBuyQuantity = 3, MultiBuyPrice = 130 },
+                        PricingRule = new PricingRule { MultiBuyQuantity = 3, MultiBuyPrice = 130 }
                     }
                 },
                 {
@@ -34,7 +34,7 @@ public static class DefaultProductHelper
                     {
                         ProductCode = defaultProductCodes[1],
                         StandardUnitPrice = 30,
-                        PricingRule = new PricingRule { MultiBuyQuantity = 2, MultiBuyPrice = 45 },
+                        PricingRule = new PricingRule { MultiBuyQuantity = 2, MultiBuyPrice = 45 }
                     }
                 },
                 {
@@ -44,7 +44,7 @@ public static class DefaultProductHelper
                 {
                     defaultProductCodes[3],
                     new Product { ProductCode = defaultProductCodes[3], StandardUnitPrice = 15 }
-                },
+                }
             };
 
         return defaultProducts;
