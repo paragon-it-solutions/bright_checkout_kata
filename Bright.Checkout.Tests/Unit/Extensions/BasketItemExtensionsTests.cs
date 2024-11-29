@@ -62,5 +62,24 @@ namespace Bright.Checkout.Tests.Unit.Extensions
             // Assert
             Assert.Equal(40, result);
         }
+
+        [Fact]
+        public void GetTotalPrice_WithPricingRuleAndQuantityMultipleOfOffer_ShouldReturnCorrectMultiBuyPrice()
+        {
+            // Arrange
+            var product = new Product
+            {
+                ProductCode = "D",
+                StandardUnitPrice = 25,
+                PricingRule = new PricingRule { MultiBuyQuantity = 3, MultiBuyPrice = 60 },
+            };
+            var basketItem = new BasketItem(product, 6);
+
+            // Act
+            var result = basketItem.GetTotalPrice();
+
+            // Assert
+            Assert.Equal(120, result);
+        }
     }
 }
