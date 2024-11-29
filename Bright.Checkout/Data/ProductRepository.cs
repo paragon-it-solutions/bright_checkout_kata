@@ -66,11 +66,11 @@ public class ProductRepository : IProductRepository
         }
         catch (KeyNotFoundException)
         {
-            Console.WriteLine($"Product SKU '{productCode}' not found!");
+            Console.WriteLine($"Product with SKU '{productCode}' not found!");
         }
         catch
         {
-            Console.WriteLine($"Error updating pricing rule for {productCode}!");
+            Console.WriteLine($"Failed to set pricing rule for product with SKU '{productCode}'!");
         }
 
         return false;
