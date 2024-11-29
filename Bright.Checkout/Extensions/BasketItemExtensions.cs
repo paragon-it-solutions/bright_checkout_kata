@@ -22,7 +22,7 @@ public static class BasketItemExtensions
         {
             // Calculate price for multi-buy offers
             // Integer division will round down to the nearest whole number - this will give the number of valid multi-buy offers
-            int multiBuyQuantityInBasket = item.Product.PricingRule.MultiBuyQuantity / item.Quantity;
+            int multiBuyQuantityInBasket = item.Quantity / item.Product.PricingRule.MultiBuyQuantity;
             int multiBuyTotal = multiBuyQuantityInBasket * item.Product.PricingRule.MultiBuyPrice;
 
             // Calculate price for remaining items
