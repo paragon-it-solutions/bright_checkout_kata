@@ -26,25 +26,36 @@ public class CheckoutService(IProductRepository productRepository) : ICheckoutSe
     ///     This method attempts to find the product in the _products dictionary using the provided item code.
     ///     If found, it either increments the quantity of an existing basket item or adds a new basket item.
     /// </remarks>
-    public void Scan(string productCode)
+    public bool Scan(string productCode)
     {
         _products.TryGetValue(productCode, out Product? product);
 
         if (product == null)
         {
-            throw new KeyNotFoundException($"Product SKU {productCode} not found!");
+            Console.WriteLine($"Product SKU '{productCode}' not found!");
+            return false;
         }
 
         _basket.TryGetValue(productCode, out BasketItem? basketItem);
 
-        if (basketItem != null)
+        try
         {
-            basketItem.Quantity++;
+            if (basketItem != null)
+            {
+                basketItem.Quantity++;
+            }
+            else
+            {
+                _basket.Add(productCode, new BasketItem(product));
+            }
         }
-        else
+        catch
         {
-            _basket.Add(productCode, new BasketItem(product));
+            Console.WriteLine($"Failed to scan product with SKU '{productCode}'!");
+            return false;
         }
+        
+        return true;
     }
 
     /// <summary>

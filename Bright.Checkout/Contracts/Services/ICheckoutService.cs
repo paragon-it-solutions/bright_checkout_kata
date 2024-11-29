@@ -2,6 +2,6 @@
 
 public interface ICheckoutService
 {
-    public void Scan(string productCode);
+    public bool Scan(string productCode);
     public int GetTotalPrice();
 }
