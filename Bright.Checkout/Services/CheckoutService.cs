@@ -18,12 +18,15 @@ public class CheckoutService(IProductRepository productRepository) : ICheckoutSe
     private readonly Dictionary<string, BasketItem> _basket = new();
 
     /// <summary>
-    ///     Scans an item by and adds it to the current checkout session.
+    ///     Scans a product and adds it to the checkout basket.
     /// </summary>
-    /// <param name="productCode">The unique code identifying the item to be scanned.</param>
-    /// <exception cref="KeyNotFoundException">Thrown when the product with the specified item code is not found.</exception>
+    /// <param name="productCode">The unique code identifying the product to be scanned.</param>
+    /// <returns>
+    ///     <c>true</c> if the product was successfully scanned and added to the basket;
+    ///     <c>false</c> if the product was not found or if there was an error during scanning.
+    /// </returns>
     /// <remarks>
-    ///     This method attempts to find the product in the _products dictionary using the provided item code.
+    ///     This method attempts to find the product in the _products dictionary using the provided product code.
     ///     If found, it either increments the quantity of an existing basket item or adds a new basket item.
     /// </remarks>
     public bool Scan(string productCode)
@@ -54,7 +57,7 @@ public class CheckoutService(IProductRepository productRepository) : ICheckoutSe
             Console.WriteLine($"Failed to scan product with SKU '{productCode}'!");
             return false;
         }
-        
+
         return true;
     }
 
