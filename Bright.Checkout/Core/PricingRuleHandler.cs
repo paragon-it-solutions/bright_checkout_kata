@@ -25,7 +25,7 @@ public class PricingRuleHandler(IProductService productService) : IPricingRuleHa
 
         do
         {
-            Console.Write("Would you customise the default product pricing rules? (Y/N): ");
+            Console.Write("Would you like to customise the product pricing rules? (Y/N): ");
             useCustomPricing = ConsoleExtensions.GetCleanStringToUpper();
         } while (useCustomPricing != "Y" && useCustomPricing != "N");
 
