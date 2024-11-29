@@ -3,15 +3,15 @@
 /// <summary>
 /// Represents products in the basket.
 /// </summary>
-public class BasketItem
+public class BasketItem(Product product)
 {
     /// <summary>
     /// The product in the basket.
     /// </summary>
-    public required Product Product { get; set; }
+    public Product Product { get; set; } = product;
 
     /// <summary>
-    /// The quantity of the product.
+    /// The quantity of the product. Defaults to 0.
     /// </summary>
-    public required int Quantity { get; set; }
+    public int Quantity { get; set; } = 0;
 }
