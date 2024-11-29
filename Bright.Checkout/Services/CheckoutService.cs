@@ -1,6 +1,6 @@
-﻿using Bright.Checkout.Extensions;
-using Bright.Checkout.Contracts.Data;
+﻿using Bright.Checkout.Contracts.Data;
 using Bright.Checkout.Contracts.Services;
+using Bright.Checkout.Extensions;
 using Bright.Checkout.Model;
 
 namespace Bright.Checkout.Services;
@@ -16,7 +16,6 @@ public class CheckoutService(IProductRepository productRepository) : ICheckoutSe
 
     // Initialize dictionary for storing scanned items and their quantities.
     private readonly Dictionary<string, BasketItem> _basket = new();
-
 
     /// <summary>
     ///     Scans an item by and adds it to the current checkout session.
